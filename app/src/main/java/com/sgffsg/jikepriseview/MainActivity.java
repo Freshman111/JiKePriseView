@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.sgffsg.jikepriseview.view.NumberTextView;
 import com.sgffsg.jikepriseview.view.RingView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private RelativeLayout hand_layout;
     private NumberTextView tv;
     private RingView ringView;
     private ImageView iv_shining,iv_hand;
@@ -24,19 +26,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        hand_layout= (RelativeLayout) findViewById(R.id.like_anim_hand_layout);
         tv= (NumberTextView) findViewById(R.id.like_anim_tv);
         iv_hand= (ImageView) findViewById(R.id.like_anim_iv_hand);
         iv_shining= (ImageView) findViewById(R.id.like_anim_iv_shining);
         ringView= (RingView) findViewById(R.id.like_anim_ring);
         tv.setOnClickListener(this);
-        iv_hand.setOnClickListener(this);
+        hand_layout.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.like_anim_tv:
-            case R.id.like_anim_iv_hand:
+            case R.id.like_anim_hand_layout:
                 if (checked){
                     checked=false;
                     tv.startPlus(false);

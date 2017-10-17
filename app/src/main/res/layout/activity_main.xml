@@ -14,6 +14,7 @@
         app:textColor="@color/text_black_color"
         app:number="1679"/>
     <RelativeLayout
+        android:id="@+id/like_anim_hand_layout"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_toLeftOf="@+id/like_anim_tv"
