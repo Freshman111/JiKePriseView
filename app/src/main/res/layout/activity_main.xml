@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.sgffsg.jikepriseview.MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
+    <com.sgffsg.jikepriseview.view.NumberTextView
+        android:id="@+id/like_anim_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerInParent="true"
+        app:textSize="14sp"
+        app:textColor="@color/text_black_color"
+        app:number="1679"/>
+    <RelativeLayout
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_toLeftOf="@+id/like_anim_tv"
+        android:layout_centerVertical="true">
+        <com.sgffsg.jikepriseview.view.RingView
+            android:id="@+id/like_anim_ring"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+        <ImageView
+            android:id="@+id/like_anim_iv_shining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:src="@mipmap/ic_messages_like_selected_shining"/>
+        <ImageView
+            android:id="@+id/like_anim_iv_hand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-8dp"
+            android:layout_below="@+id/like_anim_iv_shining"
+            android:src="@mipmap/ic_messages_like_unselected"/>
 
-</android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
