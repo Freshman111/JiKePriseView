@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     tv.startPlus(false);
                     iv_shining.setVisibility(View.INVISIBLE);
                     iv_hand.setImageResource(R.mipmap.ic_messages_like_unselected);
+                    cancelAnim();
                 }else {
                     checked=true;
                     tv.startPlus(true);
@@ -50,6 +51,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+    /**
+     * 取消点赞的动画
+     */
+    private void cancelAnim(){
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(ObjectAnimator.ofFloat(iv_hand, "scaleX", 1.0f, 0.8f, 1f), ObjectAnimator.ofFloat(iv_hand, "scaleY", 1.0f, 0.8f, 1f));
+        set.setDuration(200);
+        set.setInterpolator(new AccelerateDecelerateInterpolator());
+        set.start();
+    }
+
 
     /**
      * 点赞的动画
