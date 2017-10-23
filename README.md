@@ -3,3 +3,4 @@
 
 ## App Preview
 ![](art/jike.gif)
+![](art/flip.gif)
