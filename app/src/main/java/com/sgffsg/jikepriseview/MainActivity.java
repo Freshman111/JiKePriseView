@@ -3,10 +3,13 @@ package com.sgffsg.jikepriseview;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RingView ringView;
     private ImageView iv_shining,iv_hand;
     private boolean checked=false;
+    private EditText edit_input_num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ringView= (RingView) findViewById(R.id.like_anim_ring);
         tv.setOnClickListener(this);
         hand_layout.setOnClickListener(this);
+        findViewById(R.id.like_anim_btn_set).setOnClickListener(this);
+        findViewById(R.id.like_anim_btn_another_anim).setOnClickListener(this);
+        edit_input_num= (EditText) findViewById(R.id.like_anim_edit_input_num);
     }
 
     @Override
@@ -51,6 +58,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     tv.startPlus(true);
                     praiseAnim();
                 }
+                break;
+            case R.id.like_anim_btn_set:
+                String input=edit_input_num.getText().toString();
+                if(!TextUtils.isEmpty(input)){
+                    tv.setNum(Integer.parseInt(input));
+                }
+                break;
+            case R.id.like_anim_btn_another_anim:
+                Intent intent=new Intent(this,FlipAnimActivity.class);
+                startActivity(intent);
                 break;
         }
     }

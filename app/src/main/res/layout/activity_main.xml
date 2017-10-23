@@ -42,4 +42,26 @@
 
     </RelativeLayout>
 
+    <EditText
+        android:id="@+id/like_anim_edit_input_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_below="@+id/like_anim_tv"/>
+
+    <Button
+        android:id="@+id/like_anim_btn_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/like_anim_edit_input_num"
+        android:layout_centerHorizontal="true"
+        android:text="设置"/>
+    <Button
+        android:id="@+id/like_anim_btn_another_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/like_anim_btn_set"
+        android:layout_centerHorizontal="true"
+        android:text="另一个动画"/>
+
 </RelativeLayout>

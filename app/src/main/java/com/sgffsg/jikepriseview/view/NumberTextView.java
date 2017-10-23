@@ -96,7 +96,9 @@ public class NumberTextView extends View {
      */
     public void setNum(int num) {
         this.num = num;
-        textPaint.getTextBounds(num+"",0,text.length(),textBound);
+        text=num+"";
+        textPaint.getTextBounds(text,0,text.length(),textBound);
+        invalidate();
     }
 
 
